@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCameraCalibration", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Downsample", "Applications\Advanced\Downsample\Downsample.csproj", "{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilizeEyeInHandCalibration", "Applications\Advanced\HandEyeCalibration\UtilizeEyeInHandCalibration\UtilizeEyeInHandCalibration.csproj", "{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,10 @@ Global
 		{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}.Debug|x64.Build.0 = Debug|x64
 		{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}.Release|x64.ActiveCfg = Release|x64
 		{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}.Release|x64.Build.0 = Release|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Debug|x64.ActiveCfg = Debug|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Debug|x64.Build.0 = Debug|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Release|x64.ActiveCfg = Release|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

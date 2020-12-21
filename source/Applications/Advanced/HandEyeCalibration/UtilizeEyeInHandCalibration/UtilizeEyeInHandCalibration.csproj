@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>UtilizeEyeInHandCalibration</RootNamespace>
+    <AssemblyName>UtilizeEyeInHandCalibration</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\build\$(Configuration)\$(Platform)</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\build\$(Configuration)\$(Platform)</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=4.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MathNet.Numerics.4.12.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\YamlDotNet.8.1.2\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ZividCoreNET" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+      <HintPath>$(ZIVID_INSTALL_FOLDER)\bin\ZividCoreNET.dll</HintPath>
+    </Reference>
+    <Reference Include="ZividCoreNET" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+      <HintPath>$(ZIVID_INSTALL_FOLDER)\bin_debug\ZividCoreNET.dll</HintPath>
+    </Reference>
+    <Reference Include="ZividVisualizationNET" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+      <HintPath>$(ZIVID_INSTALL_FOLDER)\bin\ZividVisualizationNET.dll</HintPath>
+    </Reference>
+    <Reference Include="ZividVisualizationNET" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+      <HintPath>$(ZIVID_INSTALL_FOLDER)\bin_debug\ZividVisualizationNET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UtilizeEyeInHandCalibration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug GOTO Debug
+if $(ConfigurationName) == Release GOTO Release
+goto Error
+
+:Debug
+xcopy "$(ZIVID_INSTALL_FOLDER)\bin_debug\*.dll" "$(TargetDir)" /Y
+exit /B 0
+
+:Release
+xcopy "$(ZIVID_INSTALL_FOLDER)\bin\*.dll" "$(TargetDir)" /Y
+exit /B 0
+
+:Error
+echo Unsupported config
+exit /B 1</PostBuildEvent>
+  </PropertyGroup>
+</Project>
