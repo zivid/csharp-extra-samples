@@ -31,11 +31,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureFromFileVis3D", "App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureVis3D", "Applications\Basic\Visualization\CaptureVis3D\CaptureVis3D.csproj", "{68EB8781-17AA-42E9-9524-0C18A45278C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandEyeCalibration", "Applications\Advanced\HandEyeCalibration\HandEyeCalibration.csproj", "{8ACFFEC6-34E5-4E14-B08C-60051B1CFD2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandEyeCalibration", "Applications\Advanced\HandEyeCalibration\HandEyeCalibration\HandEyeCalibration.csproj", "{8ACFFEC6-34E5-4E14-B08C-60051B1CFD2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiCameraCalibration", "Applications\Advanced\MultiCameraCalibration\MultiCameraCalibration.csproj", "{26F708E4-218E-4F17-8989-F5C42796C932}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Downsample", "Applications\Advanced\Downsample\Downsample.csproj", "{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilizeEyeInHandCalibration", "Applications\Advanced\HandEyeCalibration\UtilizeEyeInHandCalibration\UtilizeEyeInHandCalibration.csproj", "{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}.Debug|x64.Build.0 = Debug|x64
 		{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}.Release|x64.ActiveCfg = Release|x64
 		{E23AED49-2EC2-47E4-83D4-F5A45F9949D8}.Release|x64.Build.0 = Release|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Debug|x64.ActiveCfg = Debug|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Debug|x64.Build.0 = Debug|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Release|x64.ActiveCfg = Release|x64
+		{FAEF093E-9EEC-4CE5-87FE-D6FDB45CE700}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
