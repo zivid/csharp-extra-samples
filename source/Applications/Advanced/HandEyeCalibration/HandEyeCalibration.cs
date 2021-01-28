@@ -20,12 +20,12 @@ class Program
 
             Console.WriteLine("Connecting to camera");
             var camera = zivid.ConnectCamera();
-            var inputs = ReadInputs(camera);
 
-            Console.WriteLine("Performing hand-eye calibration");
-            var calibrationResult = Calibrator.CalibrateEyeToHand(inputs);
+            var inputs = readHandEyeInputs(camera);
 
-            if (calibrationResult)
+            var calibrationResult = performCalibration(inputs);
+
+            if (calibrationResult.Valid())
             {
                 Console.WriteLine("{0}\n{1}\n{2}", "Hand-eye calibration OK", "Result:", calibrationResult);
             }
@@ -42,9 +42,9 @@ class Program
         }
     }
 
-    static List<HandEyeInput> ReadInputs(Zivid.NET.Camera camera)
+    static List<HandEyeInput> readHandEyeInputs(Zivid.NET.Camera camera)
     {
-        var input = new List<HandEyeInput>();
+        var handEyeInput = new List<HandEyeInput>();
         var currentPoseId = 0U;
         var beingInput = true;
 
@@ -66,7 +66,7 @@ class Program
                             if (result)
                             {
                                 Console.WriteLine("OK");
-                                input.Add(new HandEyeInput(robotPose, result));
+                                handEyeInput.Add(new HandEyeInput(robotPose, result));
                                 ++currentPoseId;
                             }
                             else
@@ -87,7 +87,27 @@ class Program
                 case CommandType.Unknown: Console.WriteLine("Error: Unknown command"); break;
             }
         } while (beingInput);
-        return input;
+        return handEyeInput;
+    }
+
+    static Zivid.NET.Calibration.HandEyeOutput performCalibration(List<HandEyeInput> handEyeInput)
+    {
+        while(true)
+        {
+            Console.WriteLine("Enter type of calibration, eth (for eye-to-hand) or eih (for eye-in-hand):");
+            var calibrationType = Console.ReadLine();
+            if (calibrationType.Equals("eth", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.WriteLine("Performing eye-to-hand calibration");
+                return Calibrator.CalibrateEyeToHand(handEyeInput);
+            }
+            if (calibrationType.Equals("eih", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.WriteLine("Performing eye-in-hand calibration");
+                return Calibrator.CalibrateEyeInHand(handEyeInput);
+            }
+            Console.WriteLine("Entered uknown method");
+        }
     }
 }
 
