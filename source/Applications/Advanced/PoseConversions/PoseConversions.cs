@@ -61,9 +61,6 @@ class Program
 
             rollPitchYawListToRotationMatrix(rpyList);
 
-
-            Console.WriteLine("Rotation from print:\n" + matrixToString(rotationMatrix));
-
         }
         catch (Exception ex)
         {
@@ -105,8 +102,15 @@ class Program
     {
         using (var reader = new StreamReader(transformFile))
         {
+            // Check if yaml contains legacy first line
+            var first_line = reader.ReadLine();
+            if (first_line.Contains("%YAML:1.0")) {
+                first_line = first_line.Replace(":", " ");
+            }
+            var new_reader = new StringReader(first_line + "\n" + reader.ReadToEnd());
+
             var yaml = new YamlStream();
-            yaml.Load(reader);
+            yaml.Load(new_reader);
 
             var poseStateNode = (YamlMappingNode)yaml.Documents[0].RootNode;
             var poseStateData = poseStateNode["PoseState"]["data"].ToString();
