@@ -53,12 +53,10 @@ class Program
             printHeader("Convert from Robot to Zivid (Rotation matrix)");
             var rotationMatrixFromAxisAngle = axisAngleToRotationMatrix(axisAngle);
             Console.WriteLine("Rotation Matrix from Axis Angle:\n" + matrixToString(rotationMatrixFromAxisAngle));
-
             var rotationMatrixFromRotationVector = rotationVectorToRotationMatrix(rotationVector);
             Console.WriteLine("Rotation Matrix from Rotation Vector:\n" + matrixToString(rotationMatrixFromRotationVector));
             var rotationMatrixFromQuaternion = quaternionToRotationMatrix(quaternion);
             Console.WriteLine("Rotation Matrix from Quaternion:\n" + matrixToString(rotationMatrixFromQuaternion));
-
             rollPitchYawListToRotationMatrix(rpyList);
 
         }
@@ -98,11 +96,14 @@ class Program
             { -vector[1,0], vector[0,0], 0 }
         });
     }
+
     static double[,] readTransform(string transformFile)
     {
         using (var reader = new StreamReader(transformFile))
         {
-            // Check if yaml contains legacy first line
+            // OpenCV writes yaml 1.0 with legacy first line
+            // YamlDotNet does not support this legacy first line
+            // so to work around we modify the first line if it is legacy
             var first_line = reader.ReadLine();
             if (first_line.Contains("%YAML:1.0")) {
                 first_line = first_line.Replace(":", " ");
@@ -131,6 +132,7 @@ class Program
             return zividMatrix;
         }
     }
+
     static Tuple<Matrix<double>, double> rotationMatrixToAngleAxis(Matrix<double> rotationMatrix)
     {
         var A = (rotationMatrix - rotationMatrix.Transpose()) / 2;
