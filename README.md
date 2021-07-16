@@ -23,7 +23,7 @@ There are two main categories of samples: **Camera** and **Applications**. The s
     - [**Capture**][Capture-url] - Capture point clouds, with color, from the Zivid camera.
     - [**Capture2D**][Capture2D-url] - Capture 2D images from the Zivid camera.
     - [**CaptureAssistant**][CaptureAssistant-url] - Use Capture Assistant to capture point clouds, with color, from the Zivid camera.
-    - [**CaptureFromFile**][CaptureFromFile-url] - Capture point clouds, with color, from the Zivid file camera. Currently supported by Zivid One. 
+    - [**CaptureFromFile**][CaptureFromFile-url] - Capture point clouds, with color, from the Zivid file camera.
     - [**CaptureWithSettingsFromYML**][CaptureWithSettingsFromYML-url] - Capture point clouds, with color, from the Zivid camera, with settings from YML file.
     - [**CaptureHDR**][CaptureHDR-url] - Capture HDR point clouds, with color, from the Zivid camera.
     - [**CaptureHDRCompleteSettings**][CaptureHDRCompleteSettings-url] - Capture point clouds, with color, from the Zivid camera with fully configured settings.
@@ -36,7 +36,7 @@ There are two main categories of samples: **Camera** and **Applications**. The s
 - **Applications**
   - **Basic**
     - **Visualization**
-      - [**CaptureFromFileVis3D**][CaptureFromFileVis3D-url] - Capture point clouds, with color, from the Zivid file camera, and visualize it. Currently supported by Zivid One.
+      - [**CaptureFromFileVis3D**][CaptureFromFileVis3D-url] - Capture point clouds, with color, from the Zivid file camera, and visualize it.
       - [**CaptureVis3D**][CaptureVis3D-url] - Capture point clouds, with color, from the Zivid camera, and visualize it.
     - **FileFormats**
       - [**ReadIterateZDF**][ReadIterateZDF-url] - Read point cloud data from a ZDF file, iterate through it, and extract individual points.
@@ -48,22 +48,23 @@ There are two main categories of samples: **Camera** and **Applications**. The s
 
 ## Instructions
 
-1. [**Install Zivid Software**](https://zivid.atlassian.net/wiki/spaces/ZividKB/pages/59080712/Zivid+Software+Installation).
+1. [**Install Zivid Software**][zivid-software-installation-url].
 Note: The samples require Zivid SDK v2 (minor version 2.2 or newer).
 
-2. [**Download Zivid Sample Data**](https://zivid.atlassian.net/wiki/spaces/ZividKB/pages/450363393/Sample+Data).
+2. [**Download Zivid Sample Data**][zivid-sample-data-url].
 
 3. Launch Visual Studio 2017.
 
 4. Open and run one of the samples.
 
 ## Support
-If you need assistance with using Zivid cameras, visit our Knowledge Base at [help.zivid.com](https://help.zivid.com/) or contact us at [customersuccess@zivid.com](mailto:customersuccess@zivid.com).
+If you need assistance with using Zivid cameras, visit our [**Knowledge Base**][knowledge-base-url] or contact us at [customersuccess@zivid.com](mailto:customersuccess@zivid.com).
 
 ## Licence
 Zivid Samples are distributed under the [BSD license](LICENSE).
 
 [header-image]: https://www.zivid.com/hubfs/softwarefiles/images/zivid-generic-github-header.png
+
 [QuickCaptureTutorial-url]: source/Camera/Basic/QuickCaptureTutorial.md
 [CompleteCaptureTutorial-url]: source/Camera/Basic/CaptureTutorial.md
 [Capture-url]: source/Camera/Basic/Capture/Capture.cs
@@ -76,6 +77,7 @@ Zivid Samples are distributed under the [BSD license](LICENSE).
 [CaptureHDRLoop-url]: source/Camera/Advanced/CaptureHDRLoop/CaptureHDRLoop.cs
 [CameraUserData-url]: source/Camera/InfoUtilOther/CameraUserData/CameraUserData.cs
 [GetCameraIntrinsics-url]: source/Camera/InfoUtilOther/GetCameraIntrinsics/GetCameraIntrinsics.cs
+
 [CaptureFromFileVis3D-url]: source/Applications/Basic/Visualization/CaptureFromFileVis3D/CaptureFromFileVis3D.cs
 [CaptureVis3D-url]: source/Applications/Basic/Visualization/CaptureVis3D/CaptureVis3D.cs
 [ReadIterateZDF-url]: source/Applications/Basic/FileFormats/ReadIterateZDF/ReadIterateZDF.cs
@@ -83,3 +85,7 @@ Zivid Samples are distributed under the [BSD license](LICENSE).
 [HandEyeCalibration-url]: source/Applications/Advanced/HandEyeCalibration/HandEyeCalibration.cs
 [MultiCameraCalibration-url]: source/Applications/Advanced/MultiCameraCalibration/MultiCameraCalibration.cs
 [Downsample-url]: source/Applications/Advanced/Downsample/Downsample.cs
+
+[knowledge-base-url]: https://support.zivid.com/
+[zivid-software-installation-url]: https://support.zivid.com/latest/rst/academy/getting-started/zivid-software-installation.html
+[zivid-sample-data-url]: https://support.zivid.com/latest/rst/academy/samples/sample-data.html

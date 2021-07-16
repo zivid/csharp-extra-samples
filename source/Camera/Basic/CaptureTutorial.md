@@ -104,7 +104,7 @@ There are only two parameters to configure with Capture Assistant:
 
 ### Manual configuration
 
-We may choose to configure settings manually. For more information about what each settings does, please see [Zivid One Camera Settings][kb-camera_settings-url].
+We may choose to configure settings manually. For more information about what each settings does, please see [Zivid One+ Camera Settings][kb-camera_settings-url].
 
 #### Single Acquisition
 
@@ -204,5 +204,5 @@ This tutorial shows how to use the Zivid SDK to connect to, configure, capture, 
 [settings-hdr-url]: CaptureHDR/CaptureHDR.cs#L21-L27
 [settingsFromFile-url]: CaptureWithSettingsFromYML/CaptureWithSettingsFromYML.cs#L21-L23
 [settings-complete-hdr-url]: CaptureHDRCompleteSettings/CaptureHDRCompleteSettings.cs#L24-L60
-[kb-camera_settings-url]: https://zivid.atlassian.net/wiki/spaces/ZividKB/pages/450265335
-[kb-point_cloud-url]: https://zivid.atlassian.net/wiki/spaces/ZividKB/pages/520061383
+[kb-camera_settings-url]: https://support.zivid.com/latest/rst/academy/camera/settings.html
+[kb-point_cloud-url]: https://support.zivid.com/latest/rst/reference-articles/zivid-3d-camera-technology/point-cloud-structure-and-output-formats.html
